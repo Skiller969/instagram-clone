@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-
+    box-sizing: border-box;
 }
 
 .main-insta{
@@ -9,11 +9,12 @@
 }
 
 .left-side{
-    width:19%;
+    width:18%;
     height:100vh;
     /* background-color: blue; */
     justify-content:center;
     margin:20px;
+    border-right:2px solid grey;
     
 }
 
@@ -37,11 +38,53 @@
 
 }
 
-.posts{
+.main-posts{
     width:56%;
     height:100vh;
-    background-color:green;
+    /* background-color:green; */
 }
+
+.main-posts .story .items .profiles{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    margin: 12px; /* Moves the entire story item away from other stories */
+}
+
+.main-posts .story .items .profiles .img{
+    display:inline-block;
+    border-radius:50%;
+    background-image: conic-gradient(from 45deg, #f9ce34, #ee2a7b, #6228d7, #f9ce34);
+    padding: 3px; /* Creates the thickness of the gradient ring */
+}
+
+.main-posts .story .items .profiles .img img{
+    height:60px;
+    width:60px; 
+    margin: 0; /* REMOVED 22px to fix the massive sizing issue */
+    object-fit:cover;
+    border-radius:50%;
+    display:block;
+    padding:2px; /* Creates a clean white/background gap inside the ring */
+    background-color: white; /* Ensures the gap is visible */
+}
+
+.main-posts .story{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.main-posts .posts{
+    height:75vh;
+    width:70%;
+    margin:auto;
+
+}
+
+
 
 .suggestions{
     width:25%;
