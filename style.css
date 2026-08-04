@@ -9,11 +9,12 @@
 }
 
 .left-side{
-    width:19%;
+    width:18%;
     height:100vh;
     /* background-color: blue; */
     justify-content:center;
     margin:20px;
+    border-right: 1px solid grey; 
     
 }
 
@@ -37,11 +38,23 @@
 
 }
 
+/* main post section */
+
 .posts{
-    width:56%;
+    width:57%;
     height:100vh;
-    background-color:green;
+    /* background-color:green; */
+
 }
+
+.posts .items .story .img {
+  width: 70px;
+  height: auto;
+  border-radius: 50%;       
+  object-fit: contain; 
+  border: 1px solid conic-gradient(from 45deg, #f9ce34, #ee2a7b, #6228d7, #f9ce34);
+}
+
 
 .suggestions{
     width:25%;
