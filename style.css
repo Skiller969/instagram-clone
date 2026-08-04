@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+.main-insta{
+    display:flex;
+}
+
+.left-side{
+    width:19%;
+    height:100vh;
+    /* background-color: blue; */
+    justify-content:center;
+    margin:20px;
+    
+}
+
+.left-side .items{
+    display:flex; 
+    align-items:center;
+    text-align:center;
+    padding:22px;
+    
+    
+}
+#logo{
+    font-family:"lobster", cursive;
+    font-size:22px;
+    margin:12px;
+    
+}
+
+.left-side .items .material-symbols-outlined{
+    margin-right:12px;
+
+}
+
+.posts{
+    width:56%;
+    height:100vh;
+    background-color:green;
+}
+
+.suggestions{
+    width:25%;
+    height:100vh;
+    background-color:red;
+}
