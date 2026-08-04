@@ -52,7 +52,8 @@
   height: auto;
   border-radius: 50%;       
   object-fit: contain; 
-  border: 1px solid conic-gradient(from 45deg, #f9ce34, #ee2a7b, #6228d7, #f9ce34);
+  border: 1px solid transparent;
+  border-image: conic-gradient(from 45deg, #f9ce34, #ee2a7b, #6228d7, #f9ce34) 1 round;
 }
 
 
