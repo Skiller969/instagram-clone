@@ -6,25 +6,22 @@
 
 .main-insta {
   display: flex;
+  min-height: 100vh; /* Forces container to span at least the full screen height */
+  width: 100%;
 }
 
+/* Sidebar Navigation */
 .left-side {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  /* Spans the full height of the viewport */
   width: 250px;
-  /* Use a fixed width instead of flex */
   display: flex;
   flex-direction: column;
-  margin: 0;
-  /* Remove margin so it sticks directly to top/left */
   padding: 15px 0;
-  /* Use padding for inner spacing instead */
   border-right: 1px solid #262626;
   z-index: 100;
-  /* Ensures it stays above scrolling feed content */
 }
 
 .left-side .items {
@@ -44,28 +41,28 @@
   margin-right: 12px;
 }
 
+/* Main Feed */
 .main-posts {
   display: flex;
   flex-direction: column;
   max-width: 630px;
-  /* Standard Instagram feed width */
   width: 100%;
   gap: 16px;
   margin: 0 auto;
-  /* Centers the container smoothly */
   padding: 30px 20px;
-  /* Vertical and horizontal inner spacing */
   min-width: 0;
-  /* Prevents flex items from overflowing */
+  flex: 1;
 }
 
+/* Stories Section */
 .main-posts .story {
-  display: inline-flex;
-  max-height: 160px;
+  display: flex;
+  max-height: 170px;
+  align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
-  flex-wrap: nowrap;
-  padding: 10px 0;
+  padding: 13px;
+  gap: 10px;
   scrollbar-width: none;
 }
 
@@ -74,13 +71,11 @@
 }
 
 .story .items {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   max-height: 100px;
-  flex-shrink: 0;
-  flex-wrap: nowrap;
   flex-shrink: 0;
 }
 
@@ -89,7 +84,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 3px;
 }
 
 .main-posts .story .items .profiles .img {
@@ -125,36 +120,33 @@
   white-space: nowrap;
 }
 
+/* Posts Section */
 .main-posts .posts {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 50px;
+  gap: 10px;
   padding: 23px;
 }
 
 .main-posts .posts .items {
   padding-bottom: 24px;
+  max-height: 600px;
 }
 
 .main-posts .posts .items img {
   width: 100%;
   height: auto;
-  max-height: 600px;
-  object-fit: cover;
-  border-radius: 4px;
 }
-
 .main-posts .posts .items .profile {
   display: flex;
   gap: 20px;
 }
 
 .main-posts .posts .items .profile img {
-  display: flex;
-  gap: 10px;
   max-width: 30px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .main-posts .posts .items .img {
@@ -166,10 +158,10 @@
 
 .engage {
   display: flex;
-  gap: 13px;
-  border-bottom: 1px solid grey;
+  gap: 10px;
 }
 
+/* Right Sidebar Suggestions */
 .suggestions {
   position: fixed;
   right: 0;
@@ -178,32 +170,29 @@
   height: 100vh;
   padding: 60px;
   border-left: 1px solid grey;
-  /* background-color:red; */
 }
 
 .suggestions .items {
   display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
-.suggestions .items .profile {
+.suggestions .items .profile,
+.suggestions .items .others {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Spreads user info to left and follow button to right */
+  width: 100%;
   gap: 30px;
 }
 
-.suggestions .items .profile .simg {
+.suggestions .items .profile .s-img,
+.suggestions .items .others .s-img {
   display: flex;
-  gap: 10px;
-  width: 60px;
-  height: 60px;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-}
-
-.suggestions .items .profile .s-img {
-  display: inline-block;
-  border-radius: 50%;
-  object-fit: cover;
   background-image: conic-gradient(
     from 45deg,
     #f9ce34,
@@ -212,17 +201,28 @@
     #f9ce34
   );
   padding: 2px;
-  width: 64px;
-  height: 64px;
-  justify-content: center;
-  align-items: center;
+  width: 48px; /* Resized to realistic Instagram sidebar avatar dimensions */
+  height: 48px;
 }
 
-.suggestions .profile .follow-btn {
+.suggestions .items .profile .simg,
+.suggestions .items .others .simg {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.suggestions .profile .follow-btn,
+.suggestions .items .others .follow-btn {
   color: rgb(35, 141, 216);
   border: none;
   padding: 3px;
   background: transparent;
   cursor: pointer;
   font-size: 16px;
+}
+
+.h3 {
+  display: flex;
+  padding: 3px;
 }
